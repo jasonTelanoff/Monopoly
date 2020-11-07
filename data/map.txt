@@ -1,4 +1,5 @@
+// type name cost monopolyNum rentCosts
 EMPTY
-RESIDENT mediterranean_avenue 60 0 2 10 30 90 160 250
+RESIDENT Mediterranean_Avenue 60 0 2 10 30 90 160 250
 COMMUNITY
-RESIDENT baltic_avenue 60 0 4 20 60 180 320 450
+RESIDENT Baltic_Avenue 60 0 4 20 60 180 320 450
