@@ -37,5 +37,5 @@ RESIDENT, Pennsylvania Ave., 320, 6, 28
 RAILROAD, Short Line
 CHANCE
 RESIDENT, Park Place, 350, 7, 35
-Empty//Luxary tax
+EMPTY, //Luxary tax
 RESIDENT, Boardwalk, 400, 7, 50
