@@ -1,6 +1,6 @@
-class Space {
+abstract class Space {
   PVector pos;
   
-  void show() {}
-  void action() {}
+  abstract void show();
+  abstract void action();
 }

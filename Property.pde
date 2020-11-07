@@ -1,4 +1,4 @@
-class Property extends Space {
+abstract class Property extends Space {
   String name;
   int cost, monopoly;
 }
