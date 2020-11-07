@@ -1,5 +1,4 @@
 final int PROP_WIDTH = 60, PROP_HEIGHT = 90, MONOPOLY_PURPLE = 0, MONOPOLY_LIGHT_BLUE = 1, MONOPOLY_PINK = 2;
-;
 int TURN = 0;
 Player[] players = new Player[3];
 Space[] spaces;
@@ -19,10 +18,10 @@ void setup() {
     };
     houseCosts = myHouseCosts;
   }
-  
+
   loadFile("data/map.txt");
-  
-  for(int i = 0; i < spaces.length; i++)
+
+  for (int i = 0; i < spaces.length; i++)
     spaces[i].setPos(i);
 
   for (int i = 0; i < players.length; i++)
@@ -56,7 +55,7 @@ void draw() {
   fill(122);
   noStroke();
   rect(721, 0, 281, 720);
-  
+
   showInfo(players[TURN]);
 }
 
@@ -66,9 +65,8 @@ void showInfo(Player p) {
   textAlign(LEFT, TOP);
   text("Player " + TURN, 730, 10);
   text("$" + p.money, 730, 60);
-  
-  for(Property prop : p.properties) {
-    
+
+  for (Property prop : p.properties) {
   }
 }
 

@@ -8,6 +8,7 @@ abstract class Space implements SpaceActions {
   int i;
 
   void setPos(int i) {
+    this.i = i;
     if (i < 10) {
       pos.x = 720 - PROP_HEIGHT - i * PROP_WIDTH;
       size.x = i == 0 ? PROP_HEIGHT : PROP_WIDTH;
