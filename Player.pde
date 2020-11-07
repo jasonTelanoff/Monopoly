@@ -1,6 +1,6 @@
 class Player {
   PVector pos = new PVector(0, 0);
-  int spaceNum, money, timesDoubles;
+  int spaceNum, money = 1500, timesDoubles;
   Space space;
   ArrayList<Property> properties = new ArrayList<Property>();
   color col;

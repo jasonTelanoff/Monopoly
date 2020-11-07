@@ -5,6 +5,7 @@ interface SpaceActions {
 
 abstract class Space implements SpaceActions {
   PVector pos = new PVector(0, 0), size = new PVector(0, 0);
+  int i;
 
   void setPos(int i) {
     if (i < 10) {
