@@ -1,4 +1,5 @@
 PGraphics board;
+final int PROP_WIDTH = 65, PROP_HEIGHT = 100;
 
 void setup() {
   size(1000, 720);

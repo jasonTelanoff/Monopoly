@@ -1,4 +1,4 @@
 abstract class Property extends Space {
   String name;
-  int cost, monopoly;
+  int cost, monopoly, mortgageValue;
 }
