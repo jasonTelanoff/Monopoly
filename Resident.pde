@@ -11,10 +11,10 @@ Resident createResident(String name, int cost, int monopoly, int mortgageValue, 
   cmon = monopoly;
   cact = action;
   cmortVal = mortgageValue;
-  
+
   cnumHouses = numHouses;
   crentCosts = java.util.Arrays.copyOfRange(rentCosts, 0, rentCosts.length);
-  
+
   return new Resident() {
     {
       this.name = cname;
@@ -22,7 +22,7 @@ Resident createResident(String name, int cost, int monopoly, int mortgageValue, 
       this.monopoly = cmon;
       this.action = cact;
       this.mortgageValue = cmortVal;
-      
+
       this.numHouses = cnumHouses;
       this.rentCosts = crentCosts;
     }
