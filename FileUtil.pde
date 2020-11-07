@@ -13,7 +13,6 @@ void loadFile(String path) {
       switch (args[0]) {
       case "EMPTY":
         spaces[i - sk] = createEmpty();
-        println(i, sk);
 
         break;
       case "CHANCE":
@@ -29,9 +28,9 @@ void loadFile(String path) {
 
         int[] houseCosts = new int[args.length - 4];
         for (int j = 0; j < houseCosts.length; j++)
-          houseCosts[j] = int(args[j + 4]);
-
-        spaces[i - sk] = createResident(args[1], int(args[2]), int(args[3]), houseCosts);
+          houseCosts[j] = int(args[j + 4].substring(1));
+        
+        spaces[i - sk] = createResident(args[1], int(args[2].substring(1)), int(args[3].substring(1)), houseCosts);
 
         break;
       case "RAILROAD":

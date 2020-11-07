@@ -13,7 +13,7 @@ class Resident extends Property {
     else if (i < 20)
       rect(pos.x + 0.9*size.x, pos.y, size.x/10, size.y);
     else if (i < 30)
-      rect(pos.x, pos.y - size.y/10, size.x, size.y/10);
+      rect(pos.x, pos.y + 0.9*size.y, size.x, size.y/10);
     else
       rect(pos.x, pos.y, size.x/10, size.y);
   }
