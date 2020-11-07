@@ -9,9 +9,9 @@ void setup() {
 void draw() {
   board.beginDraw();
   board.background(0);
-  
-  
-  
+
+
+
   board.endDraw();
   image(board, 0, 0);
 }

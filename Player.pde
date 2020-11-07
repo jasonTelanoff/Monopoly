@@ -18,9 +18,8 @@ class Player {
       col = color(0, 0, 200);
       break;
     }
-    
+
     spaceNum = 0;
-    
   }
 
   void show() {
