@@ -35,10 +35,13 @@ void setup() {
       createResident("ST. Charles Place", 140, MONOPOLY_PINK, new int[] { 10, 50, 150, 450, 625, 750 }),
       createUtility("Electric Compony"),
       createResident("States Avenue", 140, MONOPOLY_PINK, new int[] { 10, 50, 150, 450, 625, 750 }),
-      createResident("Virginia Avenue", 160, MONOPOLY_PINK, new int[] { 12, 60, 180, 500, 700, 900 }),
+      createResident("Virginia Avenue", 160, MONOPOLY_PINK, new int[] { 12, 60, 180, 500, 700, 900 })
     };
     spaces = mySpaces;
   }
+  
+  loadFile("data/map.txt");
+  
   for(int i = 0; i < spaces.length; i++)
     spaces[i].setPos(i);
 
