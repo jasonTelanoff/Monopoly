@@ -3,7 +3,7 @@ void loadFile(String path) {
 
   spaces = new Space[numSpaces];
   for (int i = 0; i < file.length; i++) {
-    if ((args = file[i].split(" ")).length > 0)
+    if ((args = file[i].split(",")).length > 0)
       switch (args[0]) {
       case "EMPTY":
         spaces[i] = createEmpty();
