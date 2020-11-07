@@ -1,6 +1,6 @@
 abstract class Resident extends Property {
-    int numHouses;
-    int[] rentCosts;
+  int numHouses;
+  int[] rentCosts;
 }
 
 int cnumHouses;

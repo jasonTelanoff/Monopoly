@@ -1,4 +1,5 @@
 PGraphics board;
+final int PROP_WIDTH = 65, PROP_HEIGHT = 100;
 
 Space[] spaces;
 
@@ -21,9 +22,9 @@ void setup() {
 void draw() {
   board.beginDraw();
   board.background(0);
-  
-  
-  
+
+
+
   board.endDraw();
   image(board, 0, 0);
 }

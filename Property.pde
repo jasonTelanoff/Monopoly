@@ -1,6 +1,6 @@
 abstract class Property extends Space {
   String name;
-  int cost, monopoly;
+  int cost, monopoly, mortgageValue;
   
   Action action;
   
@@ -11,13 +11,14 @@ abstract class Property extends Space {
 interface Action { void apply(); }
 
 String cname;
-int ccost, cmon;
+int ccost, cmon, cmortVal;
 Action cact;
-Property createProperty(String name, int cost, int monopoly, Action action) {
+Property createProperty(String name, int cost, int monopoly, int mortgageValue, Action action) {
   cname = name;
   ccost = cost;
   cmon = monopoly;
   cact = action;
+  cmortVal = mortgageValue;
   
   return new Property() {
     {
@@ -25,6 +26,7 @@ Property createProperty(String name, int cost, int monopoly, Action action) {
       this.cost = ccost;
       this.monopoly = cmon;
       this.action = cact;
+      this.mortgageValue = cmortVal;
     }
   };
 }
