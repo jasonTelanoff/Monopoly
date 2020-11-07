@@ -1,12 +1,11 @@
 class Player {
   PVector pos;
-  int spaceNum, money, timesDoubles, num;
+  int spaceNum, money, timesDoubles;
   Space space;
   ArrayList<Property> properties = new ArrayList<Property>();
   color col;
 
-  Player(int num, int type) {
-    this.num = num;
+  Player(int type) {
     switch(type) {
     case 0:
       col = color(200, 0, 0);
@@ -20,6 +19,7 @@ class Player {
     }
 
     spaceNum = 0;
+    space = spaces[spaceNum];
   }
 
   void show() {

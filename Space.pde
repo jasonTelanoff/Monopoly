@@ -1,9 +1,17 @@
-interface SpaceActions { void show(); void action(); }
+interface SpaceActions { 
+  void show(); 
+  void action();
+}
 
 abstract class Space implements SpaceActions {
   PVector pos;
 }
 
 Space createEmpty() {
-  return new Space() { void show() {} void action() {} };
+  return new Space() { 
+    public void show() {
+    } 
+    public void action() {
+    }
+  };
 }
