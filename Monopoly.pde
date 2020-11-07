@@ -1,3 +1,4 @@
+Die[] dice = new Die[2];
 PGraphics board;
 final int PROP_WIDTH = 65, PROP_HEIGHT = 100, 
   MONOPOLY_PURPLE = 0, MONOPOLY_LIGHT_BLUE = 1, MONOPOLY_PINK = 2;
