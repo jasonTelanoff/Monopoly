@@ -48,6 +48,7 @@ void loadFile(String path) {
         break;
       default:
         System.err.println("Error Parsing Line " + i + ", '" + file[i] + "'!");
+        exit();
         break;
       }
     }
