@@ -16,7 +16,8 @@ class Die {
     rect(0, 0, 40, 40);
     fill(0);
     textSize(30);
-    text(value, 10, 30);
+    textAlign(CENTER, CENTER);
+    text(value, 20, 20);
     popMatrix();
   }
   

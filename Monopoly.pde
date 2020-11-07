@@ -40,6 +40,8 @@ void setup() {
       spaces[i] = mySpaces[i];
     for(int i = mySpaces.length; i < spaces.length; i++)
       spaces[i] = createEmpty();
+    for(int i = 0; i < spaces.length; i++)
+      spaces[i].i = i;
   }
   for (int i = 0; i < spaces.length; i++)
     spaces[i].setPos(i);
@@ -72,9 +74,23 @@ void draw() {
   for (Die d : dice)
     d.show();
 
-  fill(172);
+  fill(122);
   noStroke();
   rect(721, 0, 281, 720);
+  
+  showInfo(players[TURN]);
+}
+
+void showInfo(Player p) {
+  fill(255);
+  textSize(50);
+  textAlign(LEFT, TOP);
+  text("Player " + TURN, 730, 10);
+  text("$" + p.money, 730, 60);
+  
+  for(Property prop : p.properties) {
+    
+  }
 }
 
 void mousePressed() {
