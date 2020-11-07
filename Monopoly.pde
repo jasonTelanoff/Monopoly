@@ -1,4 +1,4 @@
-final int PROP_WIDTH = 65, PROP_HEIGHT = 100;
+final int PROP_WIDTH = 60, PROP_HEIGHT = 90;
 Player[] players = new Player[1];
 Space[] spaces;
 
@@ -7,8 +7,46 @@ void setup() {
 
   {
     Space[] mySpaces = {
-      createEmpty(), 
-      createResident("Mediterranean Avenue", 60, 0, 0, null, 0, new int[] {})
+      createEmpty(),
+      createResident("Mediterranean Avenue", 60, 0, 0, null, 0, new int[] {}),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
+      createEmpty(),
     };
     spaces = mySpaces;
   }
@@ -20,7 +58,14 @@ void setup() {
 
 void draw() {
   background(0);
-
+  
+  for (Space s : spaces)
+    s.show();
+  
   for (Player p : players)
     p.show();
+}
+
+void mousePressed() {
+  players[0].move();
 }

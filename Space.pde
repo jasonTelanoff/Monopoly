@@ -4,21 +4,29 @@ interface SpaceActions {
 }
 
 abstract class Space implements SpaceActions {
-  PVector pos = new PVector(0, 0);
+  PVector pos = new PVector(0, 0), size = new PVector(0, 0);
 
   void setPos(int i) {
-    if (i < 9) {
+    if (i < 10) {
       pos.y = 720 - PROP_HEIGHT;
       pos.x = 720 - PROP_HEIGHT - i * PROP_WIDTH;
-    } else if (i < 19) {
+      size.x = i == 0 ? PROP_HEIGHT : PROP_WIDTH;
+      size.y = PROP_HEIGHT;
+    } else if (i < 20) {
       pos.x = 0;
-      pos.y = 720 - PROP_HEIGHT - i * PROP_WIDTH;
-    } else if (i < 29) {
+      pos.y = 720 - PROP_HEIGHT - (i - 10) * PROP_WIDTH;
+      size.x = PROP_HEIGHT;
+      size.y = i == 10 ? PROP_HEIGHT : PROP_WIDTH;
+    } else if (i < 30) {
       pos.y = 0;
-      pos.x = PROP_HEIGHT + i * PROP_WIDTH;
+      pos.x = i == 20 ? 0 : PROP_HEIGHT + (i - 21) * PROP_WIDTH;
+      size.x = i == 20 ? PROP_HEIGHT : PROP_WIDTH;
+      size.y = PROP_HEIGHT;
     } else {
-      pos.y = 720 - PROP_HEIGHT;
-      pos.x = PROP_HEIGHT + i * PROP_WIDTH;
+      pos.x = 720 - PROP_HEIGHT;
+      pos.y = i == 30 ? 0 : PROP_HEIGHT + (i - 31) * PROP_WIDTH;
+      size.x = PROP_HEIGHT;
+      size.y = i == 30 ? PROP_HEIGHT : PROP_WIDTH;
     }
   }
 }
@@ -26,6 +34,8 @@ abstract class Space implements SpaceActions {
 Space createEmpty() {
   return new Space() { 
     public void show() {
+      fill(255);
+      rect(pos.x, pos.y, size.x, size.y);
     } 
     public void action() {
     }

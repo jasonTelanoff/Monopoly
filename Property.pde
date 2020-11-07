@@ -5,6 +5,8 @@ abstract class Property extends Space {
   Action action;
 
   void show() {
+    fill(255);
+    rect(pos.x, pos.y, size.x, size.y);
   }
   void action() { 
     if (action != null) action.apply();

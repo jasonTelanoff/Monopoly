@@ -20,15 +20,18 @@ class Player {
 
     spaceNum = 0;
     space = spaces[spaceNum];
-    pos = new PVector(space.pos.x + PROP_WIDTH/2, space.pos.y + PROP_HEIGHT/2);
+    pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
   }
 
   void show() {
     fill(col);
-    rect(pos.x, pos.y, 50, 50);
-    println(pos.x, pos.y);
+    circle(pos.x, pos.y, 50);
   }
   void move() {
-    pos = new PVector(space.pos.x + PROP_WIDTH/2, space.pos.y + PROP_HEIGHT/2);
+    spaceNum++;
+    if(spaceNum == 40)
+      spaceNum = 0;
+    space = spaces[spaceNum];
+    pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
   }
 }
