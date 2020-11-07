@@ -26,11 +26,7 @@ void loadFile(String path) {
       case "RESIDENT":
         assert args.length > 3;
 
-        int[] houseCosts = new int[args.length - 4];
-        for (int j = 0; j < houseCosts.length; j++)
-          houseCosts[j] = int(args[j + 4].substring(1));
-        
-        spaces[i - sk] = createResident(args[1], int(args[2].substring(1)), int(args[3].substring(1)), houseCosts);
+        spaces[i - sk] = createResident(args[1], int(args[2].substring(1)), int(args[3].substring(1)), calcRents(int(args[4].substring(1))));
 
         break;
       case "RAILROAD":
@@ -56,4 +52,8 @@ void loadFile(String path) {
   for (int i = 0; i < numSpaces; i++)
     if (spaces[i] == null)
       spaces[i] = createEmpty();
+}
+
+int[] calcRents(int r) {
+  return new int[] { r, r * 5, r * 15, r * 45, r * 80, r * 125 };
 }
