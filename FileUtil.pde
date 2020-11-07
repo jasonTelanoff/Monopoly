@@ -13,7 +13,6 @@ void loadFile(String path) {
       switch (args[0]) {
       case "EMPTY":
         spaces[i - sk] = createEmpty();
-        println(i, sk);
 
         break;
       case "CHANCE":
