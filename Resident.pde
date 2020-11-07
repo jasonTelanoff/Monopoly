@@ -9,13 +9,13 @@ class Resident extends Property {
     rect(pos.x, pos.y, size.x, size.y);
     fill(col);
     if (i < 10)
-      rect(pos.x, pos.y, size.x, size.y/10);
+      rect(pos.x, pos.y, size.x, size.y*.15);
     else if (i < 20)
-      rect(pos.x + 0.9*size.x, pos.y, size.x/10, size.y);
+      rect(pos.x + 0.85*size.x, pos.y, size.x*.15, size.y);
     else if (i < 30)
-      rect(pos.x, pos.y + 0.9*size.y, size.x, size.y/10);
+      rect(pos.x, pos.y + 0.85*size.y, size.x, size.y*.15);
     else
-      rect(pos.x, pos.y, size.x/10, size.y);
+      rect(pos.x, pos.y, size.x*.15, size.y);
   }
 
   void action(int pid) {
