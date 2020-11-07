@@ -35,6 +35,7 @@ Space createEmpty() {
   return new Space() { 
     public void show() {
       fill(255);
+      stroke(0);
       rect(pos.x, pos.y, size.x, size.y);
     } 
     public void action() {

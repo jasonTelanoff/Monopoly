@@ -1,6 +1,7 @@
 final int PROP_WIDTH = 60, PROP_HEIGHT = 90;
 Player[] players = new Player[1];
 Space[] spaces;
+Die[] dice = new Die[2];
 
 void setup() {
   size(1000, 720);
@@ -54,18 +55,30 @@ void setup() {
     spaces[i].setPos(i);
 
   players[0] = new Player(0);
+  
+  for(int i = 0; i < dice.length; i++)
+    dice[i] = new Die();
 }
 
 void draw() {
-  background(0);
+  background(150, 195, 180);
   
   for (Space s : spaces)
     s.show();
   
   for (Player p : players)
     p.show();
+    
+  for(Die d : dice)
+    d.show();
+  
+  fill(172);
+  noStroke();
+  rect(721, 0, 281, 720);
 }
 
 void mousePressed() {
-  players[0].move();
+  for(Die d : dice)
+    d.roll();
+  players[0].move(dice[0].value + dice[1].value);
 }

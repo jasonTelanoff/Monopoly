@@ -8,13 +8,13 @@ class Player {
   Player(int type) {
     switch(type) {
     case 0:
-      col = color(200, 0, 0);
+      col = color(230, 0, 0);
       break;
     case 1:
-      col = color(0, 200, 0);
+      col = color(0, 230, 0);
       break;
     case 2:
-      col = color(0, 0, 200);
+      col = color(0, 0, 230);
       break;
     }
 
@@ -25,12 +25,13 @@ class Player {
 
   void show() {
     fill(col);
-    circle(pos.x, pos.y, 50);
+    noStroke();
+    circle(pos.x, pos.y, 30);
   }
-  void move() {
-    spaceNum++;
-    if(spaceNum == 40)
-      spaceNum = 0;
+  void move(int move) {
+    spaceNum+= move;
+    if(spaceNum >= 40)
+      spaceNum-= 40;
     space = spaces[spaceNum];
     pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
   }
