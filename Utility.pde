@@ -1,5 +1,5 @@
 class Utility extends Property {
-  void action() {}
+  void action(int pid) {}
 }
 
 Utility createUtility(String name) {

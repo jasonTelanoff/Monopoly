@@ -1,4 +1,4 @@
-abstract class Resident extends Property {
+class Resident extends Property {
   int numHouses;
   int[] rentCosts;
   color col;
@@ -18,7 +18,8 @@ abstract class Resident extends Property {
       rect(pos.x, pos.y, size.x/10, size.y);
   }
 
-  void action() {
+  void action(int pid) {
+    
   }
 }
 

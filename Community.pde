@@ -1,6 +1,6 @@
 class Community extends Space {
   void show() {}
-  void action() {}
+  void action(int pid) {}
 }
 
 Community createCommunity() { return new Community(); }

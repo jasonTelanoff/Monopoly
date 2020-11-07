@@ -1,6 +1,6 @@
 class Chance extends Space {
   void show() {}
-  void action() {}
+  void action(int pid) {}
 }
 
 Chance createChance() { return new Chance(); }

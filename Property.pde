@@ -9,9 +9,5 @@ abstract class Property extends Space {
   }
 }
 
-interface Action { 
-  void apply();
-}
-
 String cname;
 int ccost, cmon;

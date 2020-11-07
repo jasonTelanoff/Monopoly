@@ -1,6 +1,6 @@
 interface SpaceActions { 
   void show(); 
-  void action();
+  void action(int pid);
 }
 
 abstract class Space implements SpaceActions {
@@ -9,7 +9,6 @@ abstract class Space implements SpaceActions {
 
   void setPos(int i) {
     if (i < 10) {
-      pos.y = 720 - PROP_HEIGHT;
       pos.x = 720 - PROP_HEIGHT - i * PROP_WIDTH;
       size.x = i == 0 ? PROP_HEIGHT : PROP_WIDTH;
       size.y = PROP_HEIGHT;
@@ -38,8 +37,13 @@ Space createEmpty() {
       fill(255);
       stroke(0);
       rect(pos.x, pos.y, size.x, size.y);
+      
+      fill(0);
+      textSize(15);
+      text("EMPTY", pos.x, pos.y);
+      fill(255);
     } 
-    public void action() {
+    public void action(int pid) {
     }
   };
 }

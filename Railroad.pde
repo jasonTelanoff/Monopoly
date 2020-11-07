@@ -1,5 +1,5 @@
 class Railroad extends Property {
-  void action() {}
+  void action(int pid) {}
 }
 
 Railroad createRailroad(String name) {
