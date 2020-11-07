@@ -1,18 +1,15 @@
 abstract class Resident extends Property {
   int numHouses;
   int[] rentCosts;
+  
+  void action() {}
 }
 
-int cnumHouses;
 int[] crentCosts;
-Resident createResident(String name, int cost, int monopoly, int mortgageValue, Action action, int numHouses, int[] rentCosts) {
+Resident createResident(String name, int cost, int monopoly, int[] rentCosts) {
   cname = name;
   ccost = cost;
   cmon = monopoly;
-  cact = action;
-  cmortVal = mortgageValue;
-
-  cnumHouses = numHouses;
   crentCosts = java.util.Arrays.copyOfRange(rentCosts, 0, rentCosts.length);
 
   return new Resident() {
@@ -20,10 +17,8 @@ Resident createResident(String name, int cost, int monopoly, int mortgageValue, 
       this.name = cname;
       this.cost = ccost;
       this.monopoly = cmon;
-      this.action = cact;
-      this.mortgageValue = cmortVal;
-
-      this.numHouses = cnumHouses;
+      this.mortgageValue = ccost / 2;
+      
       this.rentCosts = crentCosts;
     }
   };

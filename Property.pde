@@ -2,15 +2,10 @@ abstract class Property extends Space {
   String name;
   int cost, monopoly, mortgageValue;
 
-  Action action;
-
   void show() {
     fill(255);
     stroke(0);
     rect(pos.x, pos.y, size.x, size.y);
-  }
-  void action() { 
-    if (action != null) action.apply();
   }
 }
 
@@ -19,22 +14,4 @@ interface Action {
 }
 
 String cname;
-int ccost, cmon, cmortVal;
-Action cact;
-Property createProperty(String name, int cost, int monopoly, int mortgageValue, Action action) {
-  cname = name;
-  ccost = cost;
-  cmon = monopoly;
-  cact = action;
-  cmortVal = mortgageValue;
-
-  return new Property() {
-    {
-      this.name = cname;
-      this.cost = ccost;
-      this.monopoly = cmon;
-      this.action = cact;
-      this.mortgageValue = cmortVal;
-    }
-  };
-}
+int ccost, cmon;
