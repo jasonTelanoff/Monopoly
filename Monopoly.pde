@@ -1,9 +1,11 @@
-final int PROP_WIDTH = 60, PROP_HEIGHT = 90, MONOPOLY_PURPLE = 0, MONOPOLY_LIGHT_BLUE = 1, MONOPOLY_PINK = 2;
+final int NUM_PLAYERS = 3, PROP_WIDTH = 60, PROP_HEIGHT = 90, MONOPOLY_PURPLE = 0, MONOPOLY_LIGHT_BLUE = 1, MONOPOLY_PINK = 2;
+final byte CONFIRM_BUY = 0;
 int TURN = 0;
-Player[] players = new Player[3];
+Player[] players = new Player[NUM_PLAYERS];
 Space[] spaces;
 Die[] dice = new Die[2];
 int[] houseCosts;
+ConfirmBox confirmBox;
 
 final int numSpaces = 40;
 
@@ -57,6 +59,9 @@ void draw() {
   rect(721, 0, 281, 720);
 
   showInfo(players[TURN]);
+
+  if (confirmBox != null)
+    confirmBox.show();
 }
 
 void showInfo(Player p) {
@@ -71,6 +76,15 @@ void showInfo(Player p) {
 }
 
 void mousePressed() {
+  if (!(confirmBox == null)) {
+    confirmBox.onPressed();
+    if (confirmBox.confirmed != -1) {
+      confirmEvent(boolean(confirmBox.confirmed));
+      confirmBox = null;
+    }
+    return;
+  }
+
   for (Die d : dice)
     d.roll();
   players[TURN].move(dice[0].value + dice[1].value);
@@ -78,5 +92,22 @@ void mousePressed() {
     TURN++;
     if (TURN > players.length - 1)
       TURN = 0;
+  }
+}
+
+void confirmEvent(boolean confirmed) {
+  if (!confirmed)
+    return;
+  switch (confirmBox.id)
+  {
+  case CONFIRM_BUY:
+    int pid;
+    if (TURN - 1 < 0)
+      pid = NUM_PLAYERS - (TURN - 1);
+    else
+      pid = TURN - 1;
+    
+    players[pid].buyProperty();
+    break;
   }
 }

@@ -12,6 +12,14 @@ abstract class Property extends Space {
     textAlign(CENTER, CENTER);
     text("$" + cost, pos.x + size.x/2, pos.y + size.y/2);
   }
+  
+  boolean propertyAction() {
+    if (owner == -1) {
+      setConfirmBox("Would you like to buy this property?", CONFIRM_BUY);
+      return true;
+    }
+    return false;
+  }
 }
 
 String cname;

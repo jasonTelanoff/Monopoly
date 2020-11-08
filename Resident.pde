@@ -19,7 +19,10 @@ class Resident extends Property {
   }
 
   void action(int pid) {
-    players[pid].pay(rentCosts[numHouses]);
+    if (propertyAction())
+      return;
+      
+    players[pid].pay(rentCosts[numHouses], owner);
   }
 }
 

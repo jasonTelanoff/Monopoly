@@ -1,5 +1,8 @@
 class Utility extends Property {
   void action(int pid) {
+    if (propertyAction())
+      return;
+      
     int utCount = 0;
     for (Property p : players[owner].properties) {
       if (p instanceof Utility)
@@ -7,7 +10,7 @@ class Utility extends Property {
     }
 
     for (Die d : dice) {
-      players[pid].pay(d.value * (utCount == 1 ? 4 : 10));
+      players[pid].pay(d.value * (utCount == 1 ? 4 : 10), owner);
     }
   }
 }

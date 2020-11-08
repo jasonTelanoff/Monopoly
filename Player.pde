@@ -27,36 +27,39 @@ class Player {
   void show(int onSpace, int num) {
     fill(col);
     noStroke();
-    
+
     pushMatrix();
     translate(pos.x, pos.y);
-    if(onSpace > 1) {
+    if (onSpace > 1) {
       rotate(map(num, 0, onSpace, 0, TWO_PI));
       circle(PROP_WIDTH/5, 0, 30);
     } else circle(0, 0, 30);
     popMatrix();
   }
-  
+
   void move(int move) {
     spaceNum+= move;
-    if(spaceNum >= 40)
+    if (spaceNum >= 40)
       spaceNum-= 40;
     space = spaces[spaceNum];
     pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
-    if (space instanceof Property) {
-      if (((Property)space).owner != -1)
-        space.action(index);
-    } else
-      space.action(index);
+    space.action(index);
   }
-  
+
   void pay(float amt) {
-    money += amt;
+    money -= amt;
   }
   
+  void pay(float amt, int toPlayer) {
+    money -= amt;
+    players[toPlayer].money += amt;
+  }
+
   void buyProperty() {
+    assert space instanceof Property;
     assert ((Property)space).owner == -1;
     ((Property)space).owner = index;
     pay(((Property)space).cost);
+    properties.add((Property)space);
   }
 }

@@ -1,12 +1,15 @@
 class Railroad extends Property {
   void action(int pid) {
+    if (propertyAction())
+      return;
+    
     int railCount = 0;
     for (Property p : players[owner].properties) {
       if (p instanceof Railroad)
         railCount++;
     }
     
-    players[pid].pay(25 * pow(2, railCount - 2));
+    players[pid].pay(25 * pow(2, railCount - 2), owner);
   }
 }
 
