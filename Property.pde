@@ -1,6 +1,7 @@
 abstract class Property extends Space {
   String name;
   int cost, monopoly, mortgageValue;
+  int owner;
 
   void show() {
     fill(255);
