@@ -5,7 +5,7 @@ void loadFile(String path) {
   int sk = 0;
   for (int i = 0; i < file.length; i++) {
     if ((args = file[i].split(",")).length > 0) {
-      if (args[0].charAt(0) == '/') {
+      if (args[0].charAt(0) == '/' || args[0].charAt(0) == '#') {
          sk++;
          continue;
       }

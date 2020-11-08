@@ -1,4 +1,5 @@
 class Player {
+  int index;
   PVector pos = new PVector(0, 0);
   int spaceNum, money = 1500, timesDoubles;
   Space space;
@@ -6,7 +7,7 @@ class Player {
   color col;
 
   Player(int type) {
-    switch(type) {
+    switch(index = type) {
     case 0:
       col = color(230, 0, 0);
       break;
@@ -41,5 +42,6 @@ class Player {
       spaceNum-= 40;
     space = spaces[spaceNum];
     pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
+    space.action(index);
   }
 }
