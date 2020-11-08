@@ -19,7 +19,7 @@ class Resident extends Property {
   }
 
   void action(int pid) {
-    players[pid].money -= rentCosts[numHouses];
+    players[pid].pay(rentCosts[numHouses]);
   }
 }
 

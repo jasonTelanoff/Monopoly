@@ -44,4 +44,7 @@ class Player {
     pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
     space.action(index);
   }
+  void pay(float amt) {
+    money += amt;
+  }
 }
