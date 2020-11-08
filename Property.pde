@@ -6,6 +6,10 @@ abstract class Property extends Space {
     fill(255);
     stroke(0);
     rect(pos.x, pos.y, size.x, size.y);
+    fill(0);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("$" + cost, pos.x + size.x/2, pos.y + size.y/2);
   }
 }
 
