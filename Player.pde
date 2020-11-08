@@ -36,15 +36,27 @@ class Player {
     } else circle(0, 0, 30);
     popMatrix();
   }
+  
   void move(int move) {
     spaceNum+= move;
     if(spaceNum >= 40)
       spaceNum-= 40;
     space = spaces[spaceNum];
     pos = new PVector(space.pos.x + space.size.x/2, space.pos.y + space.size.y/2);
-    space.action(index);
+    if (space instanceof Property) {
+      if (((Property)space).owner != -1)
+        space.action(index);
+    } else
+      space.action(index);
   }
+  
   void pay(float amt) {
     money += amt;
+  }
+  
+  void buyProperty() {
+    assert ((Property)space).owner == -1;
+    ((Property)space).owner = index;
+    pay(((Property)space).cost);
   }
 }
