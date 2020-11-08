@@ -42,6 +42,7 @@ Space createEmpty() {
       
       fill(0);
       textSize(15);
+      textAlign(LEFT, TOP);
       text("EMPTY", pos.x, pos.y);
       fill(255);
     } 
